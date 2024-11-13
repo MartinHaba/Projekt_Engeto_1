@@ -58,7 +58,7 @@ if prihlasovaci_udaje.get(jmeno) == heslo:
           sep = "\n")
 else: 
     print("unregistered user, terminating the program..")
-    quit()
+    exit()
 
 #výběr textu k analýze a jeho případná příprava
 vyber_textu = input(f"Enter a number btw. 1 and {pocet_textu} to select:")
@@ -69,10 +69,10 @@ if vyber_textu.isnumeric():
         #slova_textu = {klic:0 for klic in vybrany_text}     
     else:
         print(f"text with number {vyber_textu} does not exist, terminatin the program..")
-        quit()
+        exit()
 else:
     print("please select only numbers, terminating program..")
-    quit()
+    exit()
 
 #vlastní analýza počtu slov
 for slovo in vybrany_text:   
