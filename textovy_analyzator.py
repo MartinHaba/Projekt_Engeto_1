@@ -33,7 +33,9 @@ garpike and stingray are also present.'''
 indexy_textu = [index + 1 for index, hodnota in enumerate(TEXTS)]
 pocet_textu = indexy_textu[-1]
 
-pocet_slov = 0 
+INTERPUNKCE = ".,!?;:“”'\""
+
+pocet_slov = 0
 pocet_slov_zacinajici_velkym = 0
 pocet_slov_pouze_velkymi = 0
 pocet_slov_pouze_malymi = 0
@@ -93,6 +95,13 @@ for slovo in vybrany_text:
     if slovo.isnumeric():
         pocet_cisel +=1
         suma_cisel +=int(slovo)
+    
+    # Očištění délky slov o interpunkční znaménko za slovem
+    # nebere v úvahu možnost interpunkce na začátku nebo více znamének
+    if not slovo[-1] in INTERPUNKCE:
+        delka_slova = len(slovo)
+    else:
+        delka_slova = len(slovo)-1
     #Četnost délky slov
     if delka_slova in delky_slov:
         delky_slov[delka_slova] +=1 
