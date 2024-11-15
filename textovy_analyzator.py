@@ -33,7 +33,7 @@ garpike and stingray are also present.'''
 indexy_textu = [index + 1 for index, hodnota in enumerate(TEXTS)]
 pocet_textu = indexy_textu[-1]
 
-pocet_slov = 0
+pocet_slov = 0 
 pocet_slov_zacinajici_velkym = 0
 pocet_slov_pouze_velkymi = 0
 pocet_slov_pouze_malymi = 0
